@@ -1,4 +1,7 @@
 {
+    "scripts": {
+        "docs": "typedoc --options typedoc.json --exclude '**/*.spec.ts' ./app/"
+    },
     "dependencies": {
         "@angular/common": "2.0.0",
         "@angular/compiler": "2.0.0",
@@ -14,8 +17,6 @@
         "zone.js": "^0.6.23"
     },
     "devDependencies": {
-        "gulp": "^3.9.1",
-        "gulp-typedoc": "^2.0.1",
         "handlebars": "^4.0.6",
         "typedoc": "^0.5.1"
     }
