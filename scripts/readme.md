@@ -1,16 +1,68 @@
 ## Objects
 
 <dl>
-<dt><a href="#VideoPlayer">VideoPlayer</a> : <code>object</code></dt>
-<dd><p>practical node.js</p>
-</dd>
-<dt><a href="#VideoPlayerController">VideoPlayerController</a> : <code>object</code></dt>
-<dd><p>@azat_co</p>
-</dd>
+
+    <dt><a href="#Angular">Angular</a> : <code>object</code></dt>
+    <dd>
+        <p>This describes what the angular class does</p>
+    </dd>
+    <dt><a href="#PaginationComponent">PaginationComponent</a> : <code>object</code></dt>
+    <dd>
+        <p>higgs pagination ftw</p>
+    </dd>
+    <dt><a href="#React">React</a> : <code>object</code></dt>
+    <dd>
+        <p></p>
+    </dd>
+
 </dl>
 
-<a name="VideoPlayer"></a>
 
-## VideoPlayer : <code>object</code>
-This is the videoplayer.  It's just a small wrapper around brightcove's
-video player.  http://docs.brightcove.com/en/video-cloud/brightcove-player/index.html
+
+<a name="Angular"></a>
+
+## Angular : <code>object</code>
+This describes what the angular class does
+
+
+**Kind**: global namespace  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| kind | <code>string</code> | 
+| version | <code>string</code> | The x coordinate
+| getY | <code></code> | 
+
+
+
+<a name="PaginationComponent"></a>
+
+## PaginationComponent : <code>object</code>
+higgs pagination ftw
+
+
+**Kind**: global namespace  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| currentPage | <code>number</code> | 
+| next | <code>EventEmitter</code> | 
+| numberOfPages | <code>number</code> | 
+| prev | <code>EventEmitter</code> | Called when previous is clicked
+
+
+
+<a name="React"></a>
+
+## React : <code>object</code>
+
+
+
+**Kind**: global namespace  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| abc | <code>string</code> | 
+
+
+

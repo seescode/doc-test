@@ -1,16 +1,33 @@
 ## Objects
 
 <dl>
-<dt><a href="#VideoPlayer">VideoPlayer</a> : <code>object</code></dt>
-<dd><p>{{title}}</p>
-</dd>
-<dt><a href="#VideoPlayerController">VideoPlayerController</a> : <code>object</code></dt>
-<dd><p>{{author}}</p>
-</dd>
+
+    {{#each children}}
+    <dt><a href="#{{this.children.0.name}}">{{this.children.0.name}}</a> : <code>object</code></dt>
+    <dd>
+        <p>{{this.children.0.comment.shortText}}</p>
+    </dd>
+    {{/each}}
+
 </dl>
 
-<a name="VideoPlayer"></a>
 
-## VideoPlayer : <code>object</code>
-This is the videoplayer.  It's just a small wrapper around brightcove's
-video player.  http://docs.brightcove.com/en/video-cloud/brightcove-player/index.html
+{{#each children}}
+
+<a name="{{this.children.0.name}}"></a>
+
+## {{this.children.0.name}} : <code>object</code>
+{{this.children.0.comment.shortText}}
+
+
+**Kind**: global namespace  
+
+| Param | Type | Description |
+| --- | --- | --- |
+{{#each this.children.0.children}}
+| {{this.name}} | <code>{{this.type.name}}</code> | {{this.comment.shortText}}
+{{/each}}
+
+
+{{/each}}
+
