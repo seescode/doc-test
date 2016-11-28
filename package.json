@@ -1,0 +1,22 @@
+{
+    "dependencies": {
+        "@angular/common": "2.0.0",
+        "@angular/compiler": "2.0.0",
+        "@angular/core": "2.0.0",
+        "@angular/forms": "2.0.0",
+        "@angular/http": "2.0.0",
+        "@angular/platform-browser": "2.0.0",
+        "@angular/platform-browser-dynamic": "2.0.0",
+        "@angular/router": "3.0.0",
+        "core-js": "^2.4.1",
+        "rxjs": "5.0.0-beta.12",
+        "ts-helpers": "^1.1.1",
+        "zone.js": "^0.6.23"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-typedoc": "^2.0.1",
+        "handlebars": "^4.0.6",
+        "typedoc": "^0.5.1"
+    }
+}
