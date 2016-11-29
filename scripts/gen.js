@@ -1,5 +1,13 @@
 var handlebars = require('handlebars'),
-    fs = require('fs');
+    fs = require('fs'),
+    helpers = require('./helpers');
+
+handlebars.registerHelper('inputs', helpers.inputs);
+handlebars.registerHelper('outputs', helpers.outputs);
+handlebars.registerHelper('variables', helpers.memberVariables);
+
+//handlebars.registerHelper('outputs', helpers.bind(null, 'Outputs'));
+
 
 fs.readFile('./docs/docs.json', 'utf-8', function (docError, data) {   
     fs.readFile('./scripts/template.html', 'utf-8', function (error, source) {
@@ -15,5 +23,8 @@ fs.readFile('./docs/docs.json', 'utf-8', function (docError, data) {
         });
     });
 });
+
+
+
 
 

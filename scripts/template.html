@@ -21,12 +21,14 @@
 
 **Kind**: global namespace  
 
-| Param | Type | Description |
-| --- | --- | --- |
-{{#each this.children.0.children}}
-| {{this.name}} | <code>{{this.type.name}}</code> | {{this.comment.shortText}}
-{{/each}}
+{{#inputs this.children.0.children}}
+{{/inputs}}
 
+{{#outputs this.children.0.children}}
+{{/outputs}}
+
+{{#variables this.children.0.children}}
+{{/variables}}
 
 {{/each}}
 
