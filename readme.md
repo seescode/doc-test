@@ -1,9 +1,12 @@
-## Objects
 <dl>
 
-    <dt><a href="#PaginationComponent">PaginationComponent</a> : <code>object</code></dt>
+    <dt><a href="#PaginationComponent">PaginationComponent</a></dt>
     <dd>
         <p>higgs pagination ftw</p>
+    </dd>
+    <dt><a href="#GoogleBooksService">GoogleBooksService</a></dt>
+    <dd>
+        <p>This is some google books service thing</p>
     </dd>
 
 </dl>
@@ -12,7 +15,7 @@
 
 <a name="PaginationComponent"></a>
 
-## PaginationComponent : <code>object</code>
+## PaginationComponent
 higgs pagination ftw
 
 **Example**
@@ -24,8 +27,6 @@ higgs pagination ftw
 	(prev)=""
 	></higgs-pagination>
 ```
-**Kind**: global namespace  
-
 | Inputs | Type | Description |
 | --- | --- | --- |
 | currentPage | <code>number</code> | 
@@ -49,6 +50,42 @@ This does something very random and unimportant.
 | height | <code>number</code> | The height value.
 | url | <code>string</code> | The url value.
 | abc | <code>Array&lt;number&gt;</code> | the abc value
+
+
+
+
+<a name="GoogleBooksService"></a>
+
+## GoogleBooksService
+This is some google books service thing
+
+
+
+
+| Variables | Type | Description |
+| --- | --- | --- |
+| API_PATH | <code>string</code> | a private variable of some sort
+| http | <code>Http</code> | 
+
+### constructor(http)
+| Param | Type | Description |
+| --- | --- | --- |
+| http | <code>Http</code> | 
+
+### retrieveBook(volumeId)
+how the heck
+
+| Param | Type | Description |
+| --- | --- | --- |
+| volumeId | <code>string</code> | please work
+
+
+### searchBooks(query)
+let's you search books 2
+
+| Param | Type | Description |
+| --- | --- | --- |
+| query | <code>string</code> | the query title
 
 
 

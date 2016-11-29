@@ -1,8 +1,7 @@
-## Objects
 <dl>
 
     {{#each children}}
-    <dt><a href="#{{this.children.0.name}}">{{this.children.0.name}}</a> : <code>object</code></dt>
+    <dt><a href="#{{this.children.0.name}}">{{this.children.0.name}}</a></dt>
     <dd>
         <p>{{this.children.0.comment.shortText}}</p>
     </dd>
@@ -15,13 +14,11 @@
 
 <a name="{{this.children.0.name}}"></a>
 
-## {{this.children.0.name}} : <code>object</code>
+## {{this.children.0.name}}
 {{this.children.0.comment.shortText}}
 
 {{#snippets this.children}}
 {{/snippets}}
-
-**Kind**: global namespace  
 
 {{#inputs this.children.0.children}}
 {{/inputs}}

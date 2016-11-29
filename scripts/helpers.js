@@ -92,22 +92,12 @@ function functions(data) {
     return new handlebars.SafeString(generated);
 }
 
-/**
- * 
-**Example**  
-```html
-<video-player data-video-id="4427213670001"
-              id="atomVideo"
-              autoplay="true"
-              contentid="285567"
-              contentversion="1"
-              skin-url="styles.css"
-              plugins-url="plugins.js"
-              api-url-base=""
-              ></video-player>
-```
- */
 function generateCodeSnippet(data) {
+
+    if (data[0].decorators == null ||
+        data[0].decorators[0].name != 'Component') {
+        return '';
+    }
 
     componentName = extractSelector(data[0].decorators[0].arguments.obj);
 
