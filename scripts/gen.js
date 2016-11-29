@@ -6,6 +6,7 @@ handlebars.registerHelper('inputs', helpers.inputs);
 handlebars.registerHelper('outputs', helpers.outputs);
 handlebars.registerHelper('variables', helpers.memberVariables);
 handlebars.registerHelper('functions', helpers.memberFunctions);
+handlebars.registerHelper('snippets', helpers.generateCodeSnippet);
 
 //handlebars.registerHelper('outputs', helpers.bind(null, 'Outputs'));
 

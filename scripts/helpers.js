@@ -1,20 +1,23 @@
 var handlebars = require('handlebars');
 
-let inputsFilter = function(child) {
+let inputsFilter = function (child) {
     return child.decorators != null && child.decorators[0].name === 'Input';
 };
 
-let outputsFilter = function(child) {
+let outputsFilter = function (child) {
     return child.decorators != null && child.decorators[0].name === 'Output';
 };
 
-let memberVariablesFilter = function(child) {
-    return child.decorators == null && child.signatures == null;    
+let memberVariablesFilter = function (child) {
+    return child.decorators == null && child.signatures == null;
 }
 
-let functionsFilter = function(child) {
-    return child.signatures != null;    
+let functionsFilter = function (child) {
+    return child.signatures != null;
 }
+
+let paramsFunction = variables.bind(null, 'Param', () => true);
+
 
 function getType(type) {
     if (type.typeArguments == null) {
@@ -31,29 +34,29 @@ function variables(label, filterFunction, data) {
 
     if (filtered.length > 0) {
         generated = '| ' + label + ' | Type | Description |\n' +
-                    '| --- | --- | --- |\n';        
+            '| --- | --- | --- |\n';
     }
 
-    filtered.forEach(function(child) {
-        generated += '| ' + child.name + ' | <code>' + getType(child.type) + '</code> | ' 
-        
+    filtered.forEach(function (child) {
+        generated += '| ' + child.name + ' | <code>' + getType(child.type) + '</code> | '
+
         if (child.comment && (child.comment.shortText || child.comment.text)) {
             generated += child.comment.shortText || child.comment.text;
         }
         generated += '\n';
     });
 
-  return new handlebars.SafeString(generated);
+    return new handlebars.SafeString(generated);
 }
 
-function params(parameters){
+function params(parameters) {
     let generated = '';
 
     if (parameters == null) {
         return '';
     }
 
-    parameters.forEach(function(param) {
+    parameters.forEach(function (param) {
         generated += param.name + ', ';
     });
 
@@ -70,7 +73,7 @@ function functions(data) {
 
     let filtered = data.filter(functionsFilter);
 
-    filtered.forEach(function(child) {
+    filtered.forEach(function (child) {
         let signature = child.signatures[0];
 
         generated += '### ' + child.name + '(' + params(signature.parameters) + ')\n';
@@ -84,18 +87,62 @@ function functions(data) {
         }
 
         generated += '\n';
-    });    
+    });
 
     return new handlebars.SafeString(generated);
 }
 
-let paramsFunction = variables.bind(null, 'Param', () => true);
+/**
+ * 
+**Example**  
+```html
+<video-player data-video-id="4427213670001"
+              id="atomVideo"
+              autoplay="true"
+              contentid="285567"
+              contentversion="1"
+              skin-url="styles.css"
+              plugins-url="plugins.js"
+              api-url-base=""
+              ></video-player>
+```
+ */
+function generateCodeSnippet(data) {
+
+    componentName = extractSelector(data[0].decorators[0].arguments.obj);
+
+    let generated = '**Example**\n```html\n<' + componentName + ' \n';
+
+    let inputs = data[0].children.filter(inputsFilter);
+    inputs.forEach(function (child) {
+        generated += '\t[' + child.name + ']=""\n';
+    });
+
+    let outputs = data[0].children.filter(outputsFilter);
+    outputs.forEach(function (child) {
+        generated += '\t(' + child.name + ')=""\n';
+    });
+
+    generated += '\t></' + componentName + '>\n```';
+    return new handlebars.SafeString(generated);
+}
+
+function extractSelector(str) {
+    var re = /selector: '.*'/ig;
+    var result = re.exec(str);
+
+    var final = result[0].replace('selector: ', '')
+    final = final.replace(/'/g, '')
+
+    return final;
+}
 
 module.exports = {
     inputs: variables.bind(null, 'Inputs', inputsFilter),
     outputs: variables.bind(null, 'Outputs', outputsFilter),
     memberVariables: variables.bind(null, 'Variables', memberVariablesFilter),
-    memberFunctions: functions
+    memberFunctions: functions,
+    generateCodeSnippet: generateCodeSnippet
 }
 
 //TODO 

@@ -15,7 +15,15 @@
 ## PaginationComponent : <code>object</code>
 higgs pagination ftw
 
-
+**Example**
+```html
+<higgs-pagination 
+	[currentPage]=""
+	[numberOfPages]=""
+	(next)=""
+	(prev)=""
+	></higgs-pagination>
+```
 **Kind**: global namespace  
 
 | Inputs | Type | Description |
