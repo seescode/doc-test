@@ -22,12 +22,14 @@ export class PaginationComponent {
   }
 
   ngOnInit() {
-
   }
 
   /**
    * This does something very random and unimportant.
-   */
+   * @param height - The height value.
+   * @param url - The url value.
+   * @param abc - the abc value
+   */  
   someRandomMethod(height: number, url: string, abc: Array<number>) : string {
       return height + url;
   }

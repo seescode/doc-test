@@ -10,8 +10,6 @@
 
 
 
-
-
 <a name="PaginationComponent"></a>
 
 ## PaginationComponent : <code>object</code>
@@ -30,6 +28,19 @@ higgs pagination ftw
 | next | <code>EventEmitter</code> | 
 | prev | <code>EventEmitter</code> | Called when previous is clicked
 
+
+### constructor()
+
+### ngOnInit()
+
+### someRandomMethod(height, url, abc)
+This does something very random and unimportant.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| height | <code>number</code> | The height value.
+| url | <code>string</code> | The url value.
+| abc | <code>Array</code> | the abc value
 
 
 
