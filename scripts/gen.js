@@ -1,8 +1,8 @@
 var handlebars = require('handlebars'),
     fs = require('fs');
 
-fs.readFile('../docs/docs.json', 'utf-8', function (docError, data) {   
-    fs.readFile('template.html', 'utf-8', function (error, source) {
+fs.readFile('./docs/docs.json', 'utf-8', function (docError, data) {   
+    fs.readFile('./scripts/template.html', 'utf-8', function (error, source) {
         var template = handlebars.compile(source);
         var html = template(JSON.parse(data));
 

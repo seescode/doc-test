@@ -1,6 +1,7 @@
 {
     "scripts": {
-        "docs": "typedoc --options typedoc.json --exclude '**/*.spec.ts' ./app/"
+        "docs": "typedoc --options typedoc.json --exclude '**/*.spec.ts' ./app/",
+        "gen" : "node scripts/gen"
     },
     "dependencies": {
         "@angular/common": "2.0.0",

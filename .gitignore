@@ -55,7 +55,7 @@ npm-debug.log
 .webpack.json
 
 # Doc #
-/doc/
+/docs/
 
 # IDE #
 .idea/
