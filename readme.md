@@ -25,8 +25,8 @@ higgs pagination ftw
 
 | Outputs | Type | Description |
 | --- | --- | --- |
-| next | <code>EventEmitter</code> | 
-| prev | <code>EventEmitter</code> | Called when previous is clicked
+| next | <code>EventEmitter&lt;Array&lt;number&gt;&gt;</code> | 
+| prev | <code>EventEmitter&lt;number&gt;</code> | Called when previous is clicked
 
 
 ### constructor()
@@ -40,7 +40,7 @@ This does something very random and unimportant.
 | --- | --- | --- |
 | height | <code>number</code> | The height value.
 | url | <code>string</code> | The url value.
-| abc | <code>Array</code> | the abc value
+| abc | <code>Array&lt;number&gt;</code> | the abc value
 
 
 

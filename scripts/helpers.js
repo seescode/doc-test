@@ -16,6 +16,15 @@ let functionsFilter = function(child) {
     return child.signatures != null;    
 }
 
+function getType(type) {
+    if (type.typeArguments == null) {
+        return type.name;
+    }
+
+    return type.name + '&lt;' + getType(type.typeArguments[0]) + '&gt;';
+}
+
+
 function variables(label, filterFunction, data) {
     let generated = '';
     let filtered = data.filter(filterFunction);
@@ -26,7 +35,7 @@ function variables(label, filterFunction, data) {
     }
 
     filtered.forEach(function(child) {
-        generated += '| ' + child.name + ' | <code>' + child.type.name + '</code> | ' 
+        generated += '| ' + child.name + ' | <code>' + getType(child.type) + '</code> | ' 
         
         if (child.comment && (child.comment.shortText || child.comment.text)) {
             generated += child.comment.shortText || child.comment.text;
