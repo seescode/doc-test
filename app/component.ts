@@ -12,7 +12,7 @@ import { Component, ChangeDetectionStrategy, Output, Input, EventEmitter } from 
 export class PaginationComponent {
 
   /** Called when previous is clicked */
-  @Output() prev : EventEmitter<number> = new EventEmitter<number>();
+  @Output() prev : EventEmitter<number[]> = new EventEmitter<number[]>();
   @Output() next : EventEmitter<Array<number>> = new EventEmitter<Array<number>>();
 
   @Input() numberOfPages: number[];

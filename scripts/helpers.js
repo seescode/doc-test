@@ -21,6 +21,9 @@ let paramsFunction = variables.bind(null, 'Param', () => true);
 
 function getType(type) {
     if (type.typeArguments == null) {
+        if (type.isArray == true) {
+            return type.name + '[]';
+        }
         return type.name;
     }
 
@@ -138,4 +141,6 @@ module.exports = {
 //TODO 
 //-give better names to your variables
 //-add comments 
-//-
+
+
+//-"isArray": true,

@@ -4,6 +4,10 @@
     <dd>
         <p>higgs pagination ftw</p>
     </dd>
+    <dt><a href="#IWhatever">IWhatever</a></dt>
+    <dd>
+        <p>Whatever this is, is not important.</p>
+    </dd>
     <dt><a href="#GoogleBooksService">GoogleBooksService</a></dt>
     <dd>
         <p>This is some google books service thing</p>
@@ -30,12 +34,12 @@ higgs pagination ftw
 | Inputs | Type | Description |
 | --- | --- | --- |
 | currentPage | <code>number</code> | 
-| numberOfPages | <code>number</code> | 
+| numberOfPages | <code>number[]</code> | 
 
 | Outputs | Type | Description |
 | --- | --- | --- |
 | next | <code>EventEmitter&lt;Array&lt;number&gt;&gt;</code> | 
-| prev | <code>EventEmitter&lt;number&gt;</code> | Called when previous is clicked
+| prev | <code>EventEmitter&lt;number[]&gt;</code> | Called when previous is clicked
 
 
 ### constructor()
@@ -51,6 +55,21 @@ This does something very random and unimportant.
 | url | <code>string</code> | The url value.
 | abc | <code>Array&lt;number&gt;</code> | the abc value
 
+
+
+
+<a name="IWhatever"></a>
+
+## IWhatever
+Whatever this is, is not important.
+
+
+
+
+| Variables | Type | Description |
+| --- | --- | --- |
+| a | <code>number[]</code> | a number array
+| b | <code>Array&lt;number&gt;</code> | a number array again
 
 
 
