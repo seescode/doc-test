@@ -8,6 +8,14 @@
     <dd>
         <p>Whatever this is, is not important.</p>
     </dd>
+    <dt><a href="#HourFormatterPipe">HourFormatterPipe</a></dt>
+    <dd>
+        <p>Formats seconds to hours</p>
+    </dd>
+    <dt><a href="#StudyPlanResolver">StudyPlanResolver</a></dt>
+    <dd>
+        <p>This is the studyplan resolver.  It returns a dummy object.</p>
+    </dd>
     <dt><a href="#GoogleBooksService">GoogleBooksService</a></dt>
     <dd>
         <p>This is some google books service thing</p>
@@ -70,6 +78,46 @@ Whatever this is, is not important.
 | --- | --- | --- |
 | a | <code>number[]</code> | a number array
 | b | <code>Array&lt;number&gt;</code> | a number array again
+
+
+
+<a name="HourFormatterPipe"></a>
+
+## HourFormatterPipe
+Formats seconds to hours
+
+
+
+
+
+### transform(seconds)
+transform it
+
+| Param | Type | Description |
+| --- | --- | --- |
+| seconds | <code>number</code> | the seconds it takes
+
+
+
+
+<a name="StudyPlanResolver"></a>
+
+## StudyPlanResolver
+This is the studyplan resolver.  It returns a dummy object.
+
+
+
+
+
+### constructor()
+
+### resolve(route, state)
+Resolves the data
+
+| Param | Type | Description |
+| --- | --- | --- |
+| route | <code>ActivatedRouteSnapshot</code> | 
+| state | <code>RouterStateSnapshot</code> | 
 
 
 

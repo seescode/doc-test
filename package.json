@@ -1,24 +1,36 @@
 {
     "scripts": {
         "docs": "typedoc --options typedoc.json --exclude '**/*.spec.ts' ./app/",
-        "gen" : "node scripts/gen"
+        "gen": "node scripts/gen",
+        "it": "npm run docs && npm run gen"
     },
     "dependencies": {
-        "@angular/common": "2.0.0",
-        "@angular/compiler": "2.0.0",
-        "@angular/core": "2.0.0",
-        "@angular/forms": "2.0.0",
-        "@angular/http": "2.0.0",
-        "@angular/platform-browser": "2.0.0",
-        "@angular/platform-browser-dynamic": "2.0.0",
-        "@angular/router": "3.0.0",
-        "core-js": "^2.4.1",
-        "rxjs": "5.0.0-beta.12",
+        "@angular/common": "^2.1.0",
+        "@angular/compiler": "^2.1.0",
+        "@angular/compiler-cli": "^2.1.0",
+        "@angular/core": "^2.1.0",
+        "@angular/forms": "^2.1.0",
+        "@angular/http": "^2.1.0",
+        "@angular/material": "latest",
+        "@angular/platform-browser": "^2.1.0",
+        "@angular/platform-browser-dynamic": "^2.1.0",
+        "@angular/platform-server": "^2.1.0",
+        "@angular/router": "^3.1.0",
+        "@ngrx/core": "^1.0.0",
+        "@ngrx/db": "^2.0.0",
+        "@ngrx/effects": "^2.0.0",
+        "@ngrx/router-store": "^1.1.0",
+        "@ngrx/store": "^2.0.0",
+        "@ngrx/store-devtools": "^3.1.0",
+        "core-js": "^2.2.2",
+        "ngrx-store-freeze": "^0.1.0",
+        "reselect": "^2.5.4",
+        "rxjs": "^5.0.0-beta.12",
         "ts-helpers": "^1.1.1",
-        "zone.js": "^0.6.23"
+        "zone.js": "^0.6.25",
+        "handlebars": "^4.0.6",
+        "typedoc": "^0.5.1"    
     },
     "devDependencies": {
-        "handlebars": "^4.0.6",
-        "typedoc": "^0.5.1"
     }
 }
