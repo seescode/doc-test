@@ -69,6 +69,8 @@ This does something very random and unimportant.
 
 
 
+---
+
 
 <a name="IWhatever"></a>
 
@@ -83,6 +85,8 @@ Whatever this is, is not important.
 | a | <code>number[]</code> | a number array
 | b | <code>Array&lt;number&gt;</code> | a number array again
 
+
+---
 
 
 <a name="HourFormatterPipe"></a>
@@ -103,6 +107,8 @@ transform it
 
 
 
+---
+
 
 <a name="CartState"></a>
 
@@ -117,6 +123,8 @@ This is the cart state 2
 | productIds | <code>any[]</code> | 
 | quantityById | <code>any</code> | 
 
+
+---
 
 
 <a name="StudyPlanResolver"></a>
@@ -138,6 +146,8 @@ Resolves the data
 | route | <code>ActivatedRouteSnapshot</code> | 
 | state | <code>RouterStateSnapshot</code> | 
 
+
+---
 
 
 <a name="GoogleBooksService"></a>
@@ -174,5 +184,7 @@ let's you search books 2
 | query | <code>string</code> | the query title
 
 
+
+---
 
 
