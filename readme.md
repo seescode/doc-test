@@ -12,6 +12,10 @@
     <dd>
         <p>Formats seconds to hours</p>
     </dd>
+    <dt><a href="#CartState">CartState</a></dt>
+    <dd>
+        <p>This is the cart state 2</p>
+    </dd>
     <dt><a href="#StudyPlanResolver">StudyPlanResolver</a></dt>
     <dd>
         <p>This is the studyplan resolver.  It returns a dummy object.</p>
@@ -97,6 +101,21 @@ transform it
 | --- | --- | --- |
 | seconds | <code>number</code> | the seconds it takes
 
+
+
+
+<a name="CartState"></a>
+
+## CartState
+This is the cart state 2
+
+
+
+
+| Variables | Type | Description |
+| --- | --- | --- |
+| productIds | <code>any[]</code> | 
+| quantityById | <code>any</code> | 
 
 
 
