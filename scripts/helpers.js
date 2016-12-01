@@ -33,6 +33,9 @@ function getType(type) {
 
 function variables(label, filterFunction, data) {
     let generated = '';
+
+    console.log('data', data);
+
     let filtered = data.filter(filterFunction);
 
     if (filtered.length > 0) {

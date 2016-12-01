@@ -1,6 +1,6 @@
 <dl>
 
-    {{#each children}}
+    {{#each this}}
     <dt><a href="#{{this.children.0.name}}">{{this.children.0.name}}</a></dt>
     <dd>
         <p>{{this.children.0.comment.shortText}}</p>
@@ -10,7 +10,7 @@
 </dl>
 
 
-{{#each children}}
+{{#each this}}
 
 <a name="{{this.children.0.name}}"></a>
 
@@ -31,6 +31,7 @@
 
 {{#functions this.children.0.children}}
 {{/functions}}
+
 
 ---
 
