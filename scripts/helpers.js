@@ -1,37 +1,46 @@
 var handlebars = require('handlebars');
 
-let inputsFilter = function (child) {
+const inputsFilter = function (child) {
     return child.decorators != null && child.decorators[0].name === 'Input';
 };
 
-let outputsFilter = function (child) {
+const outputsFilter = function (child) {
     return child.decorators != null && child.decorators[0].name === 'Output';
 };
 
-let memberVariablesFilter = function (child) {
+const memberVariablesFilter = function (child) {
     return child.decorators == null && child.signatures == null;
 }
 
-let functionsFilter = function (child) {
+const functionsFilter = function (child) {
     return child.signatures != null;
 }
 
-let paramsFunction = variables.bind(null, 'Param', () => true);
+const paramsFunction = renderVariablesTable.bind(null, 'Param', () => true);
 
-
-function getType(type) {
+/**
+ * This correctly gets the type.  There's logic in here to handle
+ * correctly getting generic types like EventEmitter<number[]>
+ */
+function renderType(type) {
     if (type.typeArguments == null) {
         if (type.isArray == true) {
+            //handle arrays written like []
             return type.name + '[]';
         }
         return type.name;
     }
 
-    return type.name + '&lt;' + getType(type.typeArguments[0]) + '&gt;';
+    //handle generics
+    return type.name + '&lt;' + renderType(type.typeArguments[0]) + '&gt;';
 }
 
-
-function variables(label, filterFunction, data) {
+/**
+ * This generates a table with a list of variable names and
+ * types.  This has been made generic so that it works with 
+ * function params, interface members, and class member variables.
+ */
+function renderVariablesTable(label, filterFunction, data) {
     let generated = '';
 
     let filtered = data.filter(filterFunction);
@@ -42,7 +51,7 @@ function variables(label, filterFunction, data) {
     }
 
     filtered.forEach(function (child) {
-        generated += '| ' + child.name + ' | <code>' + getType(child.type) + '</code> | '
+        generated += '| ' + child.name + ' | <code>' + renderType(child.type) + '</code> | '
 
         if (child.comment && (child.comment.shortText || child.comment.text)) {
             generated += child.comment.shortText || child.comment.text;
@@ -53,7 +62,10 @@ function variables(label, filterFunction, data) {
     return new handlebars.SafeString(generated);
 }
 
-function params(parameters) {
+/**
+ * Generates a list of params for a function.
+ */
+function renderParamsList(parameters) {
     let generated = '';
 
     if (parameters == null) {
@@ -72,7 +84,10 @@ function params(parameters) {
     return generated;
 }
 
-function functions(data) {
+/**
+ * Generates the function name with params and description.
+ */
+function renderFunctionsTable(data) {
     let generated = '';
 
     let filtered = data.filter(functionsFilter);
@@ -80,7 +95,7 @@ function functions(data) {
     filtered.forEach(function (child) {
         let signature = child.signatures[0];
 
-        generated += '### ' + child.name + '(' + params(signature.parameters) + ')\n';
+        generated += '### ' + child.name + '(' + renderParamsList(signature.parameters) + ')\n';
 
         if (signature && signature.comment) {
             generated += signature.comment.shortText + '\n\n';
@@ -96,7 +111,10 @@ function functions(data) {
     return new handlebars.SafeString(generated);
 }
 
-function generateCodeSnippet(data) {
+/**
+ * Generates a code snippet for an angular2 component.
+ */
+function renderCodeSnippet(data) {
 
     if (data[0].decorators == null ||
         data[0].decorators[0].name != 'Component') {
@@ -121,6 +139,10 @@ function generateCodeSnippet(data) {
     return new handlebars.SafeString(generated);
 }
 
+/**
+ * This handles looking through the decorators string to find
+ * the component selector.  For example: app-pagination.
+ */
 function extractSelector(str) {
     var re = /selector: '.*'/ig;
     var result = re.exec(str);
@@ -132,16 +154,9 @@ function extractSelector(str) {
 }
 
 module.exports = {
-    inputs: variables.bind(null, 'Inputs', inputsFilter),
-    outputs: variables.bind(null, 'Outputs', outputsFilter),
-    memberVariables: variables.bind(null, 'Variables', memberVariablesFilter),
-    memberFunctions: functions,
-    generateCodeSnippet: generateCodeSnippet
+    renderComponentInputsTable: renderVariablesTable.bind(null, 'Inputs', inputsFilter),
+    renderComponentOutputsTable: renderVariablesTable.bind(null, 'Outputs', outputsFilter),
+    renderMemberVariablesTable: renderVariablesTable.bind(null, 'Variables', memberVariablesFilter),
+    renderFunctionsTable: renderFunctionsTable,
+    renderCodeSnippet: renderCodeSnippet
 }
-
-//TODO 
-//-give better names to your variables
-//-add comments 
-
-
-//-"isArray": true,

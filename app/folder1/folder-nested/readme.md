@@ -31,7 +31,6 @@ transform it
 
 
 
-
 ---
 
 
@@ -47,7 +46,6 @@ This is the cart state 2
 | --- | --- | --- |
 | productIds | <code>any[]</code> | 
 | quantityById | <code>any</code> | 
-
 
 
 ---

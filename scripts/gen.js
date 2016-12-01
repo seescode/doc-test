@@ -4,11 +4,11 @@ var handlebars = require('handlebars'),
     typeDocDataParser = require('./parser');
 
 //Registering the custom handlebar helpers
-handlebars.registerHelper('inputs', helpers.inputs);
-handlebars.registerHelper('outputs', helpers.outputs);
-handlebars.registerHelper('variables', helpers.memberVariables);
-handlebars.registerHelper('functions', helpers.memberFunctions);
-handlebars.registerHelper('snippets', helpers.generateCodeSnippet);
+handlebars.registerHelper('component-snippets', helpers.renderCodeSnippet);
+handlebars.registerHelper('component-inputs', helpers.renderComponentInputsTable);
+handlebars.registerHelper('component-outputs', helpers.renderComponentOutputsTable);
+handlebars.registerHelper('variables', helpers.renderMemberVariablesTable);
+handlebars.registerHelper('functions', helpers.renderFunctionsTable);
 
 //generate the readme.md files per directory
 fs.readFile('./docs/docs.json', 'utf-8', function (docError, typedocsJson) {

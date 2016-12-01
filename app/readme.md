@@ -33,7 +33,6 @@ Resolves the data
 | state | <code>RouterStateSnapshot</code> | 
 
 
-
 ---
 
 
@@ -69,7 +68,6 @@ let's you search books 2
 | Param | Type | Description |
 | --- | --- | --- |
 | query | <code>string</code> | the query title
-
 
 
 

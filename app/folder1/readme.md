@@ -53,7 +53,6 @@ This does something very random and unimportant.
 
 
 
-
 ---
 
 
@@ -69,7 +68,6 @@ Whatever this is, is not important.
 | --- | --- | --- |
 | a | <code>number[]</code> | a number array
 | b | <code>Array&lt;number&gt;</code> | a number array again
-
 
 
 ---
